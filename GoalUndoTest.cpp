@@ -190,7 +190,7 @@ TEST(GoalUndoTest, checkundoLastOps)
     gun.addOperation("op5");
     gun.addOperation("op6");
     gun.undoOperation("op6");
-    ASSERT_EQ("op1 op2 op3 op4 op5 op6",gun.getOperations());
+    ASSERT_EQ("op1 op2 op3 op4 op5",gun.getOperations());
 }
 
 /*  checkundoMidOps
@@ -208,7 +208,7 @@ TEST(GoalUndoTest, checkundoMidOps)
     gun.addOperation("op5");
     gun.addOperation("op6");
     gun.undoOperation("op3");
-    ASSERT_EQ("op1 op2 op3 op4 op5 op6",gun.getOperations());
+    ASSERT_EQ("op1 op2 op4 op5 op6",gun.getOperations());
 }
 
 /*  checkundoFirstOps
@@ -226,7 +226,7 @@ TEST(GoalUndoTest, checkundoFirstOp)
     gun.addOperation("op5");
     gun.addOperation("op6");
     gun.undoOperation("op1");
-    ASSERT_EQ("op1 op2 op3 op4 op5 op6",gun.getOperations());
+    ASSERT_EQ("op2 op3 op4 op5 op6",gun.getOperations());
 }
 
 /*  addDuplicateGoal
